@@ -90,7 +90,16 @@ client.on('message', async msg => {
 });
 
 function meow() {
-  var responses = ['meow', 'miau', 'ᵐᵉᵒʷ', 'ᵐᶦᵃᵘ', 'ᴍɪᴀᴜ', 'nya'];
+  var responses = [
+    'meow',
+    'miau',
+    'ᵐᵉᵒʷ',
+    'ᵐᶦᵃᵘ',
+    'ᴍɪᴀᴜ',
+    'nya',
+    'MEOW',
+    'ᴮᴵᴵᴾ ᴮᴵᴵᴾ 🔊',
+  ];
   return responses[Math.floor(Math.random() * responses.length)];
 }
 
