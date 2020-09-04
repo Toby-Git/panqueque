@@ -22,17 +22,17 @@ client.on('message', async msg => {
   let rng = Math.floor(Math.random() * 200) + 1;
   console.log(rng);
 
-  if (rng <= 10) {
-    msg.channel.send('miau');
-  }
+    if (rng <= 10) {
+      msg.channel.send(meow());
+    }
 
-  if (msg.content === 'meow' || msg.content === 'miau') {
-    msg.channel.send('miau');
-  }
+    if (msg.content === 'meow' || msg.content === 'miau') {
+      msg.channel.send(meow());
+    }
 
-  if (msg.content === 'cute') {
-    msg.channel.send('miau');
-  }
+    if (msg.content === 'cute') {
+      msg.channel.send(meow());
+    }
 
   if (msg.content.toLowerCase().trim() == 'cat') {
     const { file } = await fetch('https://aws.random.cat/meow').then(response =>
@@ -44,3 +44,8 @@ client.on('message', async msg => {
   }
 
 });
+
+function meow() {
+  var responses = ['meow', 'miau', 'ᵐᵉᵒʷ', 'ᵐᶦᵃᵘ', 'ᴍɪᴀᴜ', 'nya'];
+  return responses[Math.floor(Math.random() * responses.length)];
+}
