@@ -33,8 +33,11 @@ client.on('message', async msg => {
     }
 
     if (
-      msg.content.toLowerCase().includes('goodnight') &&
-      msg.content.toLowerCase().includes('panqueque')
+      msg.content.toLowerCase().replace(/\s+/g, '').includes('goodnight') ||
+      msg.content.toLowerCase().replace(/\s+/g, '').includes('buenasnoches') ||
+      msg.content.toLowerCase().replace(/\s+/g, '').includes('alacama') ||
+      msg.content.toLowerCase().replace(/\s+/g, '').includes('mimir') ||
+      msg.content.toLowerCase().replace(/\s+/g, '').includes('sleep')
     ) {
       msg.channel.send(sleep());
       return;
