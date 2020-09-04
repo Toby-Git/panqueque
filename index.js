@@ -24,11 +24,12 @@ client.on('message', msg => {
     msg.channel.send('miau');
   }
 
-  if (msg.content === 'meow' && !msg.author.bot) {
+  if (msg.content === 'meow' || msg.content === 'miau') {
     msg.channel.send('miau');
   }
 
-  if (msg.content === 'miau' && !msg.author.bot) {
+  if (msg.content === 'cute') {
     msg.channel.send('miau');
   }
+
 });
