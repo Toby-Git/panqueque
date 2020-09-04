@@ -33,6 +33,10 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
+    if (msg.content.toLowerCase().includes('panqueque')) {
+      msg.channel.send(meow());
+    }
+
     if (msg.content.toLowerCase().trim() == 'cat') {
       const { file } = await fetch(
         'https://aws.random.cat/meow'
