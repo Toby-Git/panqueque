@@ -10,12 +10,12 @@ client.login(process.env.TOKEN);
 client.once('ready', () => {
   console.log('Ready!');
 
-  // client.user
-  //   .setActivity('a server full of amigos', { type: 'WATCHING' })
-  //   .then(presence =>
-  //     console.log(`Activity set to ${presence.activities[0].name}`)
-  //   )
-  //   .catch(console.error);
+  client.user
+    .setActivity('a server full of amigos', { type: 'WATCHING' })
+    .then(presence =>
+      console.log(`Activity set to ${presence.activities[0].name}`)
+    )
+    .catch(console.error);
 });
 
 client.on('message', async msg => {
