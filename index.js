@@ -58,6 +58,7 @@ client.on('message', async msg => {
 
     if (
       msg.content.toLowerCase().includes('lindo') ||
+      msg.content.toLowerCase().includes('bonito') ||
       msg.content.toLowerCase().includes('cute')
     ) {
       msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
@@ -70,7 +71,10 @@ client.on('message', async msg => {
     }
 
     //TODO refactor this
-    if (msg.content.toLowerCase().trim() == 'cat') {
+    if (
+      msg.content.toLowerCase().trim() == 'cat' ||
+      msg.content.toLowerCase().trim() == 'gato'
+    ) {
       const { file } = await fetch(
         'https://aws.random.cat/meow'
       ).then(response => response.json());
