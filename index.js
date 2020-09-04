@@ -7,6 +7,11 @@ client.login(process.env.TOKEN);
 
 client.once('ready', () => {
   console.log('Ready!');
+
+  client.user.setActivity(
+    '', // watching and x meme
+    { type: 'WATCHING' }
+  );
 });
 
 client.on('message', msg => {
