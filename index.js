@@ -8,7 +8,15 @@ client.login(process.env.TOKEN);
 client.once('ready', () => {
   console.log('Ready!');
 });
+
 client.on('message', msg => {
+  let rng = Math.floor(Math.random() * 200) + 1;
+  console.log(rng);
+
+  if (rng <= 10) {
+    msg.channel.send('miau');
+  }
+
   if (msg.content === 'meow' && !msg.author.bot) {
     msg.channel.send('miau');
   }
