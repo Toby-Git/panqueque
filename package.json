@@ -1,0 +1,19 @@
+{
+  "name": "panqueque",
+  "version": "1.0.0",
+  "description": "a bot for a cat",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toby-Git/panqueque.git"
+  },
+  "author": "TobyG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toby-Git/panqueque/issues"
+  },
+  "homepage": "https://github.com/Toby-Git/panqueque#readme"
+}
