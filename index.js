@@ -27,14 +27,20 @@ client.on('message', async msg => {
 
     if (msg.content === 'meow' || msg.content === 'miau') {
       msg.channel.send(meow());
+      return;
     }
 
-    if (msg.content === 'cute') {
-      msg.channel.send(meow());
+    if (
+      msg.content.toLowerCase().includes('goodnight') &&
+      msg.content.toLowerCase().includes('panqueque')
+    ) {
+      msg.channel.send(sleep());
+      return;
     }
 
-    if (msg.content.toLowerCase().includes('panqueque')) {
-      msg.channel.send(meow());
+    if (msg.content.toLowerCase().includes('psps')) {
+      msg.channel.send('<:paneyes:750657460414447616>');
+      return;
     }
 
     if (
@@ -42,6 +48,20 @@ client.on('message', async msg => {
       msg.content.toLowerCase().includes('carpet')
     ) {
       msg.channel.send(':smirk:');
+      return;
+    }
+
+    if (
+      msg.content.toLowerCase().includes('lindo') ||
+      msg.content.toLowerCase().includes('cute')
+    ) {
+      msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
+      return;
+    }
+
+    if (msg.content.toLowerCase().includes('panqueque')) {
+      msg.channel.send(meow());
+      return;
     }
 
     //TODO refactor this
@@ -61,5 +81,16 @@ client.on('message', async msg => {
 
 function meow() {
   var responses = ['meow', 'miau', 'ᵐᵉᵒʷ', 'ᵐᶦᵃᵘ', 'ᴍɪᴀᴜ', 'nya'];
+  return responses[Math.floor(Math.random() * responses.length)];
+}
+
+function sleep() {
+  var responses = [
+    'buenas noches',
+    'a mimir',
+    'oyasumimir',
+    'a mimir mis amigos',
+    '<:paneyes:750657460414447616> ᶻᶻᶻ',
+  ];
   return responses[Math.floor(Math.random() * responses.length)];
 }
