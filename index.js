@@ -37,6 +37,14 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
+    if (
+      msg.content.toLowerCase().includes('shit') &&
+      msg.content.toLowerCase().includes('carpet')
+    ) {
+      msg.channel.send(':smirk:');
+    }
+
+    //TODO refactor this
     if (msg.content.toLowerCase().trim() == 'cat') {
       const { file } = await fetch(
         'https://aws.random.cat/meow'
