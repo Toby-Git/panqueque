@@ -17,10 +17,9 @@ client.once('ready', () => {
 });
 
 client.on('message', async msg => {
-  if (msg.author.bot || msg.content.trim() == '') return;
-
-  let rng = Math.floor(Math.random() * 200) + 1;
-  console.log(rng);
+  if (msg.guild && !msg.author.bot) {
+    let rng = Math.floor(Math.random() * 200) + 1;
+    console.log(rng);
 
     if (rng <= 10) {
       msg.channel.send(meow());
@@ -34,13 +33,16 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
-  if (msg.content.toLowerCase().trim() == 'cat') {
-    const { file } = await fetch('https://aws.random.cat/meow').then(response =>
-      response.json()
-    );
-    return msg.channel.send(
-      new $().setColor('RANDOM').setTitle('mi amigo').setImage(file)
-    );
+    if (msg.content.toLowerCase().trim() == 'cat') {
+      const { file } = await fetch(
+        'https://aws.random.cat/meow'
+      ).then(response => response.json());
+      return msg.channel.send(
+        new $().setColor('RANDOM').setTitle('mi amigo').setImage(file)
+      );
+    }
+  } else if (!msg.author.bot) {
+    msg.channel.send(meow());
   }
 
 });
