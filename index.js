@@ -82,6 +82,7 @@ client.on('message', async msg => {
     msg.channel.send(meow());
   }
 
+  //TODO handle being @'d
 });
 
 function meow() {
