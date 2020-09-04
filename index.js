@@ -15,7 +15,7 @@ client.once('ready', () => {
 });
 
 client.on('message', msg => {
-  if (message.author.bot || message.content.trim() == '') return;
+  if (msg.author.bot || msg.content.trim() == '') return;
 
   let rng = Math.floor(Math.random() * 200) + 1;
   console.log(rng);
