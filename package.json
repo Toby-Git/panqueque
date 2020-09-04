@@ -4,7 +4,8 @@
   "description": "a bot for a cat",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Toby-Git/panqueque/issues"
   },
-  "homepage": "https://github.com/Toby-Git/panqueque#readme"
+  "homepage": "https://github.com/Toby-Git/panqueque#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
 }
