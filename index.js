@@ -27,7 +27,11 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
-    if (msg.content === 'meow' || msg.content === 'miau') {
+    if (
+      msg.content === 'meow' ||
+      msg.content === 'miau' ||
+      msg.content === 'nya'
+    ) {
       msg.channel.send(meow());
       return;
     }
