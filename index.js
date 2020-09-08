@@ -32,6 +32,11 @@ client.on('message', async msg => {
       return;
     }
 
+    if (msg.content === 'buenos dias' || msg.content === 'good morning') {
+      msg.channel.send('<:paneyes:750657460414447616> buenos dias');
+      return;
+    }
+
     if (
       msg.content.toLowerCase().replace(/\s+/g, '').includes('goodnight') ||
       msg.content.toLowerCase().replace(/\s+/g, '').includes('buenasnoches') ||
