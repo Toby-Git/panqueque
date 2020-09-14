@@ -29,12 +29,17 @@ client.on('message', async msg => {
     }
 
     if (msg.content.toLowerCase().startsWith('!status')) {
-      client.user
-        .setActivity(msg.content.replace('!status', ''), { type: 'WATCHING' })
-        .then(presence =>
-          console.log(`Activity set to ${presence.activities[0].name}`)
-        )
-        .catch(console.error);
+      if (msg.member.hasPermission('MANAGE_CHANNELS')) {
+        client.user
+          .setActivity(msg.content.replace('!status', ''), { type: 'WATCHING' })
+          .then(presence =>
+            console.log(`Activity set to ${presence.activities[0].name}`)
+          )
+          .catch(console.error);
+      } else {
+        msg.channel.send('<:paneyes:750657460414447616> meow??');
+        return;
+      }
     }
 
     if (
