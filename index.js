@@ -66,16 +66,13 @@ client.on('message', async msg => {
     }
 
     if (
-      msg.content.toLowerCase().includes('lindo') ||
-      msg.content.toLowerCase().includes('bonito') ||
-      msg.content.toLowerCase().includes('cute')
+      (msg.content.toLowerCase().includes('lindo') ||
+        msg.content.toLowerCase().includes('bonito') ||
+        msg.content.toLowerCase().includes('cute')) &&
+      msg.content.toLowerCase().includes('panqueque')
     ) {
-      if (msg.content.toLowerCase().includes('panqueque')) {
-        msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
-        return;
-      } else {
-        return;
-      }
+      msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
+      return;
     }
 
     if (msg.content.toLowerCase().includes('panqueque')) {
