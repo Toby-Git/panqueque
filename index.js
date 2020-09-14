@@ -86,12 +86,18 @@ client.on('message', async msg => {
       msg.content.toLowerCase().trim() == 'cat' ||
       msg.content.toLowerCase().trim() == 'gato'
     ) {
-      const { file } = await fetch(
-        'https://aws.random.cat/meow'
-      ).then(response => response.json());
-      return msg.channel.send(
-        new $().setColor('RANDOM').setTitle('mi amigo').setImage(file)
-      );
+      try {
+        const { file } = await fetch(
+          'https://aws.random.cat/mew'
+        ).then(response => response.json());
+        return msg.channel.send(
+          new $().setColor('RANDOM').setTitle('mi amigo').setImage(file)
+        );
+      } catch (e) {
+        console.log(e);
+        msg.channel.send('<:paneyes:750657460414447616> meow??');
+        return;
+      }
     }
   } else if (!msg.author.bot) {
     //reply to dms
