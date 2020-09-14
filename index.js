@@ -28,14 +28,17 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
-    if (msg.content.toLowerCase().startsWith('!status')) {
+    if (msg.content.toLowerCase().startsWith('!status ')) {
       if (msg.member.hasPermission('MANAGE_CHANNELS')) {
         client.user
-          .setActivity(msg.content.replace('!status', ''), { type: 'WATCHING' })
+          .setActivity(msg.content.replace('!status ', ''), {
+            type: 'WATCHING',
+          })
           .then(presence =>
             console.log(`Activity set to ${presence.activities[0].name}`)
           )
           .catch(console.error);
+        msg.delete;
       } else {
         msg.channel.send('<:paneyes:750657460414447616> meow??');
         return;
