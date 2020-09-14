@@ -28,6 +28,15 @@ client.on('message', async msg => {
       msg.channel.send(meow());
     }
 
+    if (msg.content.toLowerCase().startsWith('!status')) {
+      client.user
+        .setActivity(msg.content.replace('!status', ''), { type: 'WATCHING' })
+        .then(presence =>
+          console.log(`Activity set to ${presence.activities[0].name}`)
+        )
+        .catch(console.error);
+    }
+
     if (
       msg.content === 'meow' ||
       msg.content === 'miau' ||
