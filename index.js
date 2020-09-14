@@ -70,8 +70,12 @@ client.on('message', async msg => {
       msg.content.toLowerCase().includes('bonito') ||
       msg.content.toLowerCase().includes('cute')
     ) {
-      msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
-      return;
+      if (msg.content.toLowerCase().includes('panqueque')) {
+        msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
+        return;
+      } else {
+        return;
+      }
     }
 
     if (msg.content.toLowerCase().includes('panqueque')) {
