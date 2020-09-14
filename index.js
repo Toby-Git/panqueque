@@ -32,7 +32,7 @@ client.on('message', async msg => {
       if (msg.member.hasPermission('MANAGE_CHANNELS')) {
         client.user
           .setActivity(msg.content.replace('!status ', ''), {
-            type: 'WATCHING',
+            type: 'PLAYING',
           })
           .then(presence =>
             console.log(`Activity set to ${presence.activities[0].name}`)
