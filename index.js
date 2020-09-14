@@ -38,7 +38,13 @@ client.on('message', async msg => {
             console.log(`Activity set to ${presence.activities[0].name}`)
           )
           .catch(console.error);
-        msg.delete;
+        //fast error handling
+        //TODO add check for manage message
+        try {
+          msg.delete();
+        } catch (error) {
+          console.log(error);
+        }
       } else {
         msg.channel.send('<:paneyes:750657460414447616> meow??');
         return;
