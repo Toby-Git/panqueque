@@ -20,6 +20,7 @@ client.once('ready', () => {
 
 client.on('message', async msg => {
   if (msg.guild && !msg.author.bot) {
+    //ignore bots
     let rng = Math.floor(Math.random() * 200) + 1;
     console.log(rng);
 
@@ -93,6 +94,7 @@ client.on('message', async msg => {
       );
     }
   } else if (!msg.author.bot) {
+    //reply to dms
     msg.channel.send(meow());
   }
 
@@ -107,6 +109,8 @@ function meow() {
     'ᵐᶦᵃᵘ',
     'ᴍɪᴀᴜ',
     'nya',
+    'purrrrr',
+    'mrow',
     'MEOW',
     'ᴮᴵᴵᴾ ᴮᴵᴵᴾ 🔊',
   ];
