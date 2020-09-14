@@ -111,7 +111,7 @@ client.on('message', async msg => {
     ) {
       try {
         const { file } = await fetch(
-          'https://aws.random.cat/mew'
+          'https://aws.random.cat/meow'
         ).then(response => response.json());
         return msg.channel.send(
           new $().setColor('RANDOM').setTitle('mi amigo').setImage(file)
