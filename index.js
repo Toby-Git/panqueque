@@ -60,7 +60,10 @@ client.on('message', async msg => {
       return;
     }
 
-    if (msg.content.includes('buenos dias') || (msg.content.includes('good morning') {
+    if (
+      msg.content.includes('buenos dias') ||
+      msg.content.includes('good morning')
+    ) {
       msg.channel.send('<:paneyes:750657460414447616> buenos dias');
       return;
     }
