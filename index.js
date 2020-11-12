@@ -95,7 +95,7 @@ client.on('message', async msg => {
         msg.content.toLowerCase().includes('cute')) &&
       msg.content.toLowerCase().includes('panqueque')
     ) {
-      msg.channel.send('<:paneyes:750657460414447616> ᵗᵘ');
+      msg.channel.send('<:panflush:755487466579951697> ᵗᵘ');
       return;
     }
 
