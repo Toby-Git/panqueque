@@ -52,9 +52,9 @@ client.on('message', async msg => {
     }
 
     if (
-      msg.content === 'meow' ||
-      msg.content === 'miau' ||
-      msg.content === 'nya'
+      msg.content.toLowerCase() === 'meow' ||
+      msg.content.toLowerCase() === 'miau' ||
+      msg.content.toLowerCase() === 'nya'
     ) {
       msg.channel.send(meow());
       return;
